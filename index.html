@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BuildYourBrand — Done-For-You Short-Form Content</title>
+<meta name="description" content="Done-for-you short-form video for business owners. We research, script, edit and post, so you get leads, not just views.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#7A1F2B;
+    --maroon-dark:#4E121B;
+    --maroon-soft:#F6E9EB;
+    --cream:#FBF7F2;
+    --ink:#1C1416;
+    --muted:#6B5D60;
+    --line:#E8DCDD;
+    --white:#fff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  h1,h2,.display{font-family:Anton,Impact,sans-serif;font-weight:400;letter-spacing:.5px;text-transform:uppercase;line-height:1.05}
+  h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:12px}
+  .kicker{font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--maroon);margin-bottom:10px}
+  .lead{color:var(--muted);font-size:1.08rem;max-width:620px}
+  section{padding:88px 0}
+  .center{text-align:center}
+  .center .lead{margin:0 auto}
+
+  /* buttons */
+  .btn{display:inline-block;background:var(--maroon);color:var(--white);text-decoration:none;font-weight:700;
+       padding:15px 30px;border-radius:999px;letter-spacing:.5px;transition:transform .15s,background .15s}
+  .btn:hover{background:var(--maroon-dark);transform:translateY(-2px)}
+  .btn.light{background:var(--white);color:var(--maroon)}
+  .btn.light:hover{background:var(--maroon-soft)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(251,247,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:Anton,sans-serif;font-size:1.5rem;text-decoration:none;letter-spacing:.5px}
+  .logo span{color:var(--maroon)}
+  .navlinks{display:flex;gap:28px;align-items:center}
+  .navlinks a{text-decoration:none;font-weight:500;font-size:.95rem}
+  .navlinks a:not(.btn):hover{color:var(--maroon)}
+  .navlinks .btn{padding:10px 20px;font-size:.9rem}
+  @media(max-width:760px){.navlinks a:not(.btn){display:none}}
+
+  /* hero */
+  .hero{background:var(--maroon);color:var(--white);padding:110px 0 120px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-160px;top:-160px;width:480px;height:480px;border-radius:50%;
+               border:70px solid rgba(255,255,255,.06)}
+  .hero .kicker{color:#F2C9CF}
+  .hero h1{font-size:clamp(2.6rem,8vw,5.4rem);max-width:900px;margin-bottom:22px}
+  .hero h1 em{font-style:normal;color:#F2C9CF}
+  .hero p{font-size:1.15rem;max-width:600px;opacity:.9;margin-bottom:34px}
+  .hero .sub{margin-top:18px;font-size:.9rem;opacity:.75}
+
+  /* strip */
+  .strip{background:var(--maroon-dark);color:var(--white);padding:22px 0}
+  .strip .wrap{display:flex;flex-wrap:wrap;gap:12px 36px;justify-content:center;font-weight:600;font-size:.95rem}
+  .strip span::before{content:"✦ ";color:#F2C9CF}
+
+  /* problem */
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:44px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .card h3{font-size:1.15rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.97rem}
+
+  /* steps */
+  .steps{background:var(--white)}
+  .step{position:relative;padding-top:58px}
+  .step .num{position:absolute;top:0;left:28px;font-family:Anton,sans-serif;font-size:3rem;color:var(--maroon);line-height:1}
+  .step.card{padding-top:84px}
+
+  /* results */
+  .results{background:var(--maroon-soft)}
+  .result{background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid var(--line)}
+  .result .who{font-weight:700;margin-bottom:4px}
+  .result .niche{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+  .ba{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .ba div{flex:1;text-align:center;padding:14px 8px;border-radius:10px;background:var(--cream)}
+  .ba div.after{background:var(--maroon);color:var(--white)}
+  .ba b{display:block;font-family:Anton,sans-serif;font-size:1.7rem;font-weight:400}
+  .ba small{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;opacity:.8}
+  .ba .arrow{flex:0;background:none;color:var(--maroon);font-size:1.4rem;padding:0}
+  .result blockquote{font-size:.95rem;color:var(--muted);border-left:3px solid var(--maroon);padding-left:12px}
+  .placeholder{border:2px dashed var(--maroon);background:transparent}
+
+  /* 90 days */
+  .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;margin-top:44px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+  .phase{background:var(--white);padding:28px;border-right:1px solid var(--line)}
+  .phase:last-child{border-right:none}
+  .phase .when{font-family:Anton,sans-serif;font-size:1.6rem;color:var(--maroon)}
+  .phase ul{list-style:none;margin-top:10px}
+  .phase li{padding:5px 0;color:var(--muted);font-size:.95rem}
+  .phase li::before{content:"→ ";color:var(--maroon);font-weight:700}
+
+  /* pricing */
+  .pricing{background:var(--white)}
+  .plan{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;display:flex;flex-direction:column}
+  .plan.featured{background:var(--maroon);color:var(--white);border:none;transform:scale(1.03)}
+  .plan .tag{font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+  .plan h3{font-family:Anton,sans-serif;font-weight:400;font-size:2rem;text-transform:uppercase}
+  .plan .vol{font-weight:600;margin-bottom:18px}
+  .plan .price{font-family:Anton,sans-serif;font-size:2.6rem;margin:18px 0 4px}
+  .plan .price small{font-family:Inter,sans-serif;font-size:.9rem;opacity:.7}
+  .plan ul{list-style:none;flex:1}
+  .plan li{padding:7px 0;border-bottom:1px solid rgba(0,0,0,.07);font-size:.95rem}
+  .plan.featured li{border-color:rgba(255,255,255,.15)}
+  .plan li::before{content:"✓ ";font-weight:700;color:var(--maroon)}
+  .plan.featured li::before{color:#F2C9CF}
+  .plan .btn{text-align:center;margin-top:24px}
+
+  /* faq */
+  .faq{max-width:780px;margin:40px auto 0}
+  details{background:var(--white);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:0 22px}
+  summary{cursor:pointer;font-weight:600;padding:20px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--maroon);font-size:1.4rem;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--muted);padding-bottom:20px}
+
+  /* cta */
+  .cta{background:var(--maroon);color:var(--white)}
+  .cta p{opacity:.9;max-width:560px;margin:0 auto 30px}
+  footer{background:var(--maroon-dark);color:#E9CFD3;padding:30px 0;font-size:.9rem}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+  footer a{text-decoration:none}
+  footer a:hover{color:var(--white)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Build<span>Your</span>Brand</a>
+    <div class="navlinks">
+      <a href="#how">How it works</a>
+      <a href="#results">Results</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#book" class="btn">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Done-for-you social media for busy business owners</div>
+    <h1>Grow &amp; sell on social media <em>without doing it yourself</em></h1>
+    <p>Done-for-you short-form video for business owners, coaches and brands. We research, script, edit and post — you film for a few hours a month and get leads in your inbox.</p>
+    <a href="#book" class="btn light">Book a free strategy call</a>
+    <div class="sub">90-day growth program · Instagram · TikTok · Facebook · YouTube · LinkedIn</div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Niche research</span><span>Scripting</span><span>Editing</span><span>Posting</span><span>Lead-focused CTAs</span><span>Monthly reports</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap center">
+    <div class="kicker">Sound familiar?</div>
+    <h2>Great business. Nobody's watching.</h2>
+    <p class="lead">Most business owners rely on referrals, ads and a website nobody visits. Meanwhile, your customers are scrolling social media every day.</p>
+    <div class="grid3" style="text-align:left">
+      <div class="card"><h3>No time for content</h3><p>You're busy running the business. Nobody has hours to script, shoot and edit every week.</p></div>
+      <div class="card"><h3>Posts that go nowhere</h3><p>You've posted before. A few likes, zero enquiries, no idea what actually works.</p></div>
+      <div class="card"><h3>Buyers can't see your edge</h3><p>Your expertise, your process, your results — the things that win customers are invisible online.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="how">
+  <div class="wrap center">
+    <div class="kicker">How we work together</div>
+    <h2>You stay the expert. We become your content team.</h2>
+    <p class="lead">A simple four-step system, repeated every month.</p>
+    <div class="grid3" style="text-align:left">
+      <div class="card step"><div class="num">01</div><h3>Research</h3><p>We study the top creators and best-performing videos in your niche to find formats that already win.</p></div>
+      <div class="card step"><div class="num">02</div><h3>Script</h3><p>We write a full month of short-form scripts in your voice, plus filming directions: what to shoot, angles, and how to batch it.</p></div>
+      <div class="card step"><div class="num">03</div><h3>Film &amp; edit</h3><p>You film in one or two sessions a month. We edit everything into scroll-stopping shorts.</p></div>
+      <div class="card step"><div class="num">04</div><h3>Upload</h3><p>We post to your chosen channels with captions and calls-to-action that send buyers to your DMs, forms and calendar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="results" id="results">
+  <div class="wrap center">
+    <div class="kicker">Client results</div>
+    <h2>Before &amp; after</h2>
+    <p class="lead">Accounts we worked on in collaboration with Personal Brand Launch.</p>
+    <div class="grid3" style="text-align:left">
+      <div class="result">
+        <div class="who">Business owner</div>
+        <div class="niche">Instagram growth</div>
+        <div class="ba">
+          <div><small>Before</small><b>700</b></div>
+          <div class="arrow">→</div>
+          <div class="after"><small>After</small><b>938K</b></div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="who">Business owner</div>
+        <div class="niche">Instagram growth</div>
+        <div class="ba">
+          <div><small>Before</small><b>34</b></div>
+          <div class="arrow">→</div>
+          <div class="after"><small>After</small><b>472K</b></div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="who">Coach</div>
+        <div class="niche">Instagram growth</div>
+        <div class="ba">
+          <div><small>Before</small><b>4.1K</b></div>
+          <div class="arrow">→</div>
+          <div class="after"><small>After</small><b>143K</b></div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="who">Disability insurance agency</div>
+        <div class="niche">Instagram growth</div>
+        <div class="ba">
+          <div><small>Before</small><b>3.1K</b></div>
+          <div class="arrow">→</div>
+          <div class="after"><small>After</small><b>85.1K</b></div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="who">Nurse educator</div>
+        <div class="niche">Instagram growth</div>
+        <div class="ba">
+          <div><small>Before</small><b>23</b></div>
+          <div class="arrow">→</div>
+          <div class="after"><small>After</small><b>30.1K</b></div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="who">Mental performance coach</div>
+        <div class="niche">Instagram growth</div>
+        <div class="ba">
+          <div><small>Before</small><b>2.6K</b></div>
+          <div class="arrow">→</div>
+          <div class="after"><small>After</small><b>24.7K</b></div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="who">College Audition Pros</div>
+        <div class="niche">Audition coaching</div>
+        <div class="ba">
+          <div><small>Before</small><b>2.4K</b></div>
+          <div class="arrow">→</div>
+          <div class="after"><small>After</small><b>18.9K</b></div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="who">Property Kings</div>
+        <div class="niche">Real estate</div>
+        <div class="ba">
+          <div><small>Before</small><b>2.7K</b></div>
+          <div class="arrow">→</div>
+          <div class="after"><small>After</small><b>18.1K</b></div>
+        </div>
+      </div>
+      <div class="result">
+        <div class="who">Married by AE</div>
+        <div class="niche">Wedding services</div>
+        <div class="ba">
+          <div><small>Before</small><b>219</b></div>
+          <div class="arrow">→</div>
+          <div class="after"><small>After</small><b>8.7K</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <div class="kicker">What happens in 90 days</div>
+    <h2>The 90-day growth program</h2>
+    <p class="lead">Building an organic audience is an asset, not a quick ad. Here's what the first three months look like.</p>
+    <div class="timeline" style="text-align:left">
+      <div class="phase"><div class="when">Month 1</div><strong>Launch &amp; test</strong>
+        <ul><li>Niche research &amp; profile optimisation</li><li>First month of shorts goes live</li><li>Test hooks, topics and formats</li></ul></div>
+      <div class="phase"><div class="when">Month 2</div><strong>Find the outliers</strong>
+        <ul><li>Spot videos doing 5x normal reach</li><li>Double down on winning angles</li><li>Add lead-focused CTAs &amp; DM triggers</li></ul></div>
+      <div class="phase"><div class="when">Month 3</div><strong>Scale what works</strong>
+        <ul><li>More of what brings enquiries</li><li>Full report: reach, followers, leads</li><li>Plan for the next quarter</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="wrap center">
+    <div class="kicker">Packages</div>
+    <h2>Social media management</h2>
+    <p class="lead">Every package includes research, scripting, editing and uploading. 90-day minimum. Request a call and we'll tailor a quote to your business.</p>
+    <div class="grid3" style="text-align:left;align-items:stretch">
+      <div class="plan">
+        <div class="tag">Start</div><h3>Grow</h3><div class="vol">12 shorts / month</div>
+        <ul><li>Onboarding &amp; monthly review call</li><li>Niche research</li><li>Scripting</li><li>Editing &amp; uploading</li><li>5 sales-focused stories</li><li>Monthly report</li></ul>
+        <div class="price" style="font-size:1.6rem">Custom pricing</div>
+        <a href="#book" class="btn">Request a call</a>
+      </div>
+      <div class="plan featured">
+        <div class="tag">Most popular</div><h3>Scale</h3><div class="vol">20 shorts / month</div>
+        <ul><li>Everything in Grow</li><li>10 sales-focused stories</li><li>LinkedIn repurposing</li><li>Weekday email support</li><li>Profile optimisation checklist</li></ul>
+        <div class="price" style="font-size:1.6rem">Custom pricing</div>
+        <a href="#book" class="btn light">Request a call</a>
+      </div>
+      <div class="plan">
+        <div class="tag">Go all in</div><h3>Dominate</h3><div class="vol">30 shorts / month</div>
+        <ul><li>Everything in Scale</li><li>15 sales-focused stories</li><li>Lead-capture automation (DM keywords)</li><li>Priority support</li></ul>
+        <div class="price" style="font-size:1.6rem">Custom pricing</div>
+        <a href="#book" class="btn">Request a call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap center">
+    <div class="kicker">FAQ</div>
+    <h2>Questions we get</h2>
+    <div class="faq" style="text-align:left">
+      <details><summary>Does this actually work in my niche?</summary>
+        <p>Yes. Whether you sell a service, a product or your expertise, your buyers are on social media. Behind-the-scenes, educational, storytelling and myth-busting content builds trust fast — and every video ends with a clear next step. If you already have a solid offer, this system works for you.</p></details>
+      <details><summary>What concrete result will I get after 3 months?</summary>
+        <p>A consistent library of 36–90 videos, a growing audience of potential customers, and a lead pipeline we track every month: DMs, form fills and booked calls. We set milestones around leads, not vanity metrics.</p></details>
+      <details><summary>How much work is this for me?</summary>
+        <p>A few hours, one or two days a month, to film. A monthly strategy call. Quick approvals so everything stays in your voice. We handle the rest.</p></details>
+      <details><summary>We tried posting before and it didn't work. Why would this be different?</summary>
+        <p>Most companies post without research. We start by finding what already works in your niche, test multiple angles, find the outliers and deliberately repeat what wins.</p></details>
+      <details><summary>Why a 90-day commitment?</summary>
+        <p>Organic growth is an asset you build. Ninety days gives us enough time to test, find your winning content and start scaling it.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta center" id="book">
+  <div class="wrap">
+    <h2>Ready to be the brand everyone's watching?</h2>
+    <p>Book a free 20-minute strategy call. We'll look at your current accounts and show you exactly what we'd post in your first month.</p>
+    <!-- Replace the link below with your Calendly / booking link -->
+    <a href="mailto:buildyourbrand26@gmail.com?subject=Strategy%20call" class="btn light">Book your free call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="yr"></span> BuildYourBrand. All rights reserved.</div>
+    <div><a href="mailto:buildyourbrand26@gmail.com">buildyourbrand26@gmail.com</a></div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
